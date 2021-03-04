@@ -1,4 +1,4 @@
-FROM node:12.21.0-alpine3.10
+FROM node:12.12-alpine
 ENV BUILDER_VERSION=1.0
 LABEL io.k8s.description="web build"
 LABEL io.k8s.display-name=subversion
