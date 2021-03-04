@@ -1,0 +1,39 @@
+#!/bin/sh -e
+#
+# S2I assemble script for the 'celery-s2i' image.
+# The 'assemble' script builds your application source so that it is ready to run.
+#
+# For more information refer to the documentation:
+#	https://github.com/openshift/source-to-image/blob/master/docs/builder_image.md
+#
+
+if [[ "$1" == "-h" ]]; then
+	# If the 'xx:xx' assemble script is executed with '-h' flag,
+	# print the usage.
+	exec /usr/libexec/s2i/usage
+fi
+
+# Restore artifacts from the previous build (if they exist).
+#
+#if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
+#  echo "---> Restoring build artifacts..."
+#  mv /tmp/artifacts/. ./
+#fi
+
+#echo "---> Installing application source..."
+#cp -Rf /tmp/src/. ./
+
+
+# Restore artifacts from the previous build (if they exist).
+#
+#rm -rf   ng-sop/_nginx 
+#rm -rf   ng-sop/ssl 
+#mv ng-sop/* .
+#rm -rf   /tmp/src/_nginx 
+rm -rf   /tmp/src/ssl 
+cp -Rf /tmp/src/. .
+
+
+npm run build
+#node --max-old-space-size=5120  ng build --prod --build-optimizer
+rm -rf node_modules

@@ -4,7 +4,7 @@ LABEL io.k8s.description=web build io.k8s.display-name=subversion io.openshift.t
 ENV APP_ROOT=/ng-base
 WORKDIR /ng-base
 RUN mkdir -p /usr/libexec/
-COPY ./s2i/bin /usr/libexec/s2i/
+COPY ./s2i /usr/libexec/
 RUN apk update; \
     apk add git; \
 	apk add npm
