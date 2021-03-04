@@ -10,6 +10,6 @@ RUN mkdir -p /usr/libexec/
 COPY ./s2i /usr/libexec/
 RUN apk update; \
     apk add git; \
-	apk add npm
+	apk add npm python2 python3
 ADD package.json .
 RUN npm install .
