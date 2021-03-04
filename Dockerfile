@@ -10,6 +10,6 @@ RUN mkdir -p /usr/libexec/
 COPY ./s2i /usr/libexec/
 RUN apk update; \
     apk add git; \
-	apk add npm python2 python3  pkgconfig pixman
+	apk add npm python2 python3  pkgconfig pixman pixman-dev cairo-dev
 ADD package.json .
 RUN npm install .
