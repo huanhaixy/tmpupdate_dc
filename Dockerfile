@@ -13,3 +13,4 @@ RUN apk update; \
 	apk add npm python2 python3  pkgconfig pixman pixman-dev cairo-dev pango-dev pango make g++ gcc
 ADD package.json .
 RUN npm install .
+RUN npm update
