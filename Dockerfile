@@ -14,3 +14,4 @@ RUN apk update; \
 ADD package.json .
 ADD package-lock.json .
 RUN npm install
+RUN npm install typescript@~3.4.5
