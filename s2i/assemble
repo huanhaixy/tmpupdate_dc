@@ -26,14 +26,14 @@ fi
 
 # Restore artifacts from the previous build (if they exist).
 #
-#rm -rf   ng-sop/_nginx 
-#rm -rf   ng-sop/ssl 
+#rm -rf   ng-sop/_nginx
+#rm -rf   ng-sop/ssl
 #mv ng-sop/* .
-#rm -rf   /tmp/src/_nginx 
-rm -rf   /tmp/src/ssl 
+#rm -rf   /tmp/src/_nginx
+rm -rf   /tmp/src/ssl
 cp -Rf /tmp/src/. .
 
 
-npm run build
+npm run ${runopt}
 #node --max-old-space-size=5120  ng build --prod --build-optimizer
 rm -rf node_modules
