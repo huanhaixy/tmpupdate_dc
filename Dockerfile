@@ -12,7 +12,6 @@ RUN apk update; \
     apk add git; \
 	apk add npm python2 python3  pkgconfig pixman pixman-dev cairo-dev pango-dev pango make g++ gcc
 ADD package.json .
-ADD package-lock.json .
 COPY _nginx _nginx
 ENV runopt=build
 ADD assemble /usr/libexec/s2i/
